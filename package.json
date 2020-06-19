@@ -11,7 +11,7 @@
     "gen": "run-script-os",
     "gen:win32": "java -jar tools\\swagger-codegen\\swagger-codegen-cli-2.3.1.jar generate -c tools\\swagger-codegen\\swagger-config.json -i ..\\public\\swagger\\swagger.json -t tools\\swagger-codegen\\typescript-fetch -l typescript-fetch -o src\\swagger\\",
     "gen:darwin:linux": "java -jar tools/swagger-codegen/swagger-codegen-cli-2.3.1.jar generate -c tools/swagger-codegen/swagger-config.json -i ../public/swagger/swagger.json -t tools/swagger-codegen/typescript-fetch -l typescript-fetch -o src/swagger/",
-    "dev": "cross-env APP_ENV=dev BASE_URL=http://kanribo.test  parcel -p 1236 serve index.html",
+    "dev": "cross-env APP_ENV=dev BASE_URL=http://kanribo.test parcel serve index.html",
     "prod": "cross-env NODE_ENV=production APP_ENV=prod BASE_URL=https://kanribo.uluru-bpo.jp parcel watch index.html --public-url ./ -d ../public/admin/",
     "sww": "run-script-os",
     "sww:win32": ".\\tools\\swaggerWatcher\\windows_amd64\\swaggerWatcher.exe ../app tools/swaggerReload/windows_amd64/swaggerReload.exe ../ ./",
@@ -85,7 +85,7 @@
     "stylelint-config-css-modules": "^1.2.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^0.8.1",
-    "ts-jest": "^26.1.0",
+    "ts-jest": "^22.4.4",
     "tslib": "^1.9.0",
     "typed-css-modules": "^0.6.4",
     "typescript": "^2.8.3"
