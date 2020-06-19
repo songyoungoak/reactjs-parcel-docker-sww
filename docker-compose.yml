@@ -4,9 +4,9 @@ services:
   documents:
     container_name: react-parcel-sww
     build: .
+    tty: true
     volumes:
       - '.:/app'
-      - '/app/node_modules'
     ports:
       - '1236:1236'
     environment:
