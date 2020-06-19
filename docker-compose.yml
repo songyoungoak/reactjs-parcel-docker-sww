@@ -1,0 +1,13 @@
+version: '2'
+
+services: 
+  documents:
+    container_name: react-parcel-sww
+    build: .
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '1236:1236'
+    environment:
+      - NODE_ENV=development
