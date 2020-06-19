@@ -1,26 +1,123 @@
 {
-  "name": "documents",
+  "name": "ts-react",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "ts-react-parcel",
+  "author": "Jackple <359310444@qq.com>",
+  "private": true,
   "scripts": {
-    "start": "parcel index.html  -p 1236",
-    "start-dev": "parcel index.html ",
-    "build": "parcel build index.html "
+    "test": "jest",
+    "add": "node ./tool/cli.js add",
+    "tcm": "tcm src -c -w",
+    "gen": "run-script-os",
+    "gen:win32": "java -jar tools\\swagger-codegen\\swagger-codegen-cli-2.3.1.jar generate -c tools\\swagger-codegen\\swagger-config.json -i ..\\public\\swagger\\swagger.json -t tools\\swagger-codegen\\typescript-fetch -l typescript-fetch -o src\\swagger\\",
+    "gen:darwin:linux": "java -jar tools/swagger-codegen/swagger-codegen-cli-2.3.1.jar generate -c tools/swagger-codegen/swagger-config.json -i ../public/swagger/swagger.json -t tools/swagger-codegen/typescript-fetch -l typescript-fetch -o src/swagger/",
+    "dev": "cross-env APP_ENV=dev BASE_URL=http://kanribo.test  parcel -p 1236 serve index.html",
+    "prod": "cross-env NODE_ENV=production APP_ENV=prod BASE_URL=https://kanribo.uluru-bpo.jp parcel watch index.html --public-url ./ -d ../public/admin/",
+    "sww": "run-script-os",
+    "sww:win32": ".\\tools\\swaggerWatcher\\windows_amd64\\swaggerWatcher.exe ../app tools/swaggerReload/windows_amd64/swaggerReload.exe ../ ./",
+    "sww:darwin": "./tools/swaggerWatcher/darwin_amd64/swaggerWatcher ../app tools/swaggerReload/darwin_amd64/swaggerReload ../ ./",
+    "sww:linux": "./tools/swaggerWatcher/linux_amd64/swaggerWatcher ../app tools/swaggerReload/linux_amd64/swaggerReload ../ ./",
+    "swr": "run-script-os",
+    "swr:win32": ".\\tools\\swaggerReload\\windows_amd64\\swaggerReload.exe ../ ./",
+    "swr:darwin": "./tools/swaggerReload/darwin_amd64/swaggerReload ../ ./",
+    "swr:linux": "./tools/swaggerReload/linux_amd64/swaggerReload ../ ./",
+    "llgen": "run-script-os",
+    "llgen:win32": ".\\tools\\laravel\\gen\\controller\\controllerGen.exe ../app",
+    "llgen:darwin": "bash ./tools/laravel/gen/controller_sh/controllerGen.sh",
+    "llgen:linux": "bash ./tools/laravel/gen/controller_sh/controllerGen.sh",
+    "prod_alt": "cross-env APP_ENV=dev BASE_URL=http://222.151.246.4:24080 parcel watch index.html --public-url ./ -d ../public/admin/",
+    "prod_before": "cross-env APP_ENV=dev BASE_URL=https://stg-kanribo.uluru-bpo.jp parcel watch index.html --public-url ./ -d ../public/admin/",
+    "prod_before_2nd": "cross-env APP_ENV=dev BASE_URL=https://stg-2nd-kanribo.uluru-bpo.jp parcel watch index.html --public-url ./ -d ../public/admin/",
+    "lint": "tslint -c tslint.json 'src/**/*[^.d$].ts*'"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "node-sass": "^4.14.1",
-    "parcel-bundler": "^1.12.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@types/react-document-title": "^2.0.2",
+    "antd": "^3.4.3",
+    "axios": "^0.19.2",
+    "bignumber.js": "^7.2.1",
+    "blueimp-md5": "^2.10.0",
+    "browserslist": "^3.2.5",
+    "classnames": "^2.2.5",
+    "enquire.js": "^2.1.6",
+    "js-file-download": "^0.4.1",
+    "json-typescript-mapper": "^1.1.3",
+    "less": "^2.7.3",
+    "mobx": "^3.6.2",
+    "mobx-react": "^4.4.3",
+    "moment": "^2.22.1",
+    "node-gyp": "^7.0.0",
+    "normalize.css": "^7.0.0",
+    "portable-fetch": "^3.0.0",
+    "qs": "^6.5.1",
+    "rc-drawer-menu": "^0.5.7",
+    "react": "^16.3.2",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^3.1.3",
+    "react-router-dom": "^4.2.2",
+    "stylus": "^0.54.5"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@types/classnames": "^2.2.3",
+    "@types/enzyme": "^3.1.10",
+    "@types/jest": "^21.1.10",
+    "@types/node": "^8.10.10",
+    "@types/qs": "^6.5.1",
+    "@types/react": "^16.3.12",
+    "@types/react-dom": "^16.0.5",
+    "@types/react-router-dom": "^4.2.6",
+    "@types/systemjs": "^0.20.6",
+    "@types/webpack-env": "^1.13.6",
+    "autoprefixer": "^7.2.6",
+    "babel-plugin-import": "^1.13.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "typescript": "^3.9.5"
+    "cross-env": "^5.1.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^26.0.1",
+    "node-sass": "latest",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.1.0",
+    "run-script-os": "^1.1.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-css-modules": "^1.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^0.8.1",
+    "ts-jest": "^26.1.0",
+    "tslib": "^1.9.0",
+    "typed-css-modules": "^0.6.4",
+    "typescript": "^2.8.3"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest",
+      "^.+\\.(css|scss|less)$": "./styleMock.js"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/",
+      "dist/"
+    ],
+    "setupFiles": [
+      "raf/polyfill",
+      "./jestSetup.js"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   }
 }

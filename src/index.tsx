@@ -1,6 +1,10 @@
+import '../node_modules/normalize.css/normalize.css'
+
+
+
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import '../scss/app.scss'
+
 
 const AppContainer = (props) => {
   const {text} = props;
@@ -12,4 +16,4 @@ const AppContainer = (props) => {
 }
 
 const App = document.getElementById('app')
-ReactDOM.render(<AppContainer text="I want to see sww + Template ReactJS + Parcel + Docker"/>, App)
+ReactDOM.render(<AppContainer text="I want to see kanribo"/>, App)
