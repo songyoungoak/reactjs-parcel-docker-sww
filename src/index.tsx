@@ -1,6 +1,6 @@
 import '../node_modules/normalize.css/normalize.css'
 import './styles/app.scss'
-
+import './styles/common.scss'
 
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
