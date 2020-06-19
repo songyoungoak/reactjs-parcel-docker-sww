@@ -1,0 +1,193 @@
+@import "flex";
+
+.relative {
+  position: relative;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+$marginDirections: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+);
+$marginPixels: 5, 10, 15, 30;
+$marginAndPaddings: (
+  m: margin,
+  p: padding,
+);
+
+@each $marginAndPaddingKey, $marginAndPadding in $marginAndPaddings {
+  @each $marginDirectionKey, $marginDirection in $marginDirections {
+    @each $marginPixel in $marginPixels {
+      .#{$marginAndPaddingKey}#{$marginDirectionKey}#{$marginPixel} {
+        #{$marginAndPadding}-#{$marginDirection}: #{$marginPixel}px;
+      }
+    }
+  }
+}
+
+$marginHorizontals: (
+  lr: (left right)
+);
+
+@each $marginAndPaddingKey, $marginAndPadding in $marginAndPaddings {
+  @each $marginHorizontalKey, $marginHorizontal in $marginHorizontals {
+    @each $marginPixel in $marginPixels {
+      .#{$marginAndPaddingKey}#{$marginHorizontalKey}#{$marginPixel} {
+        @each $marginHorizontalValue in $marginHorizontal {
+          #{$marginAndPadding}-#{$marginHorizontalValue}: #{$marginPixel}px !important;
+        }
+      }
+    }
+  }
+}
+
+// 点線の hr
+.borderdHr {
+  border: none;
+  border-top: dashed .25em #d0d0d0;
+  height: .25em;
+  color: #FFFFFF;
+  background: none;
+}
+
+// 左寄せの form label
+.leftLabel {
+  :global {
+    .ant-form-item-label {
+      text-align: left;
+    }
+  }
+}
+
+.formItem {
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// 一覧テーブルの上に設置する検索フォーム
+body .searchFormCard {
+  margin-bottom: 12px;
+  background-color: #f7f5f5;
+  :global {
+    // タイトル部分
+    .ant-card-head {
+      background-color: #ededed;
+      border-bottom-color: #d0d0d0;
+    }
+  }
+}
+
+// 一覧テーブル
+.standardTable {
+  :global {
+    // ページング
+    .ant-table-pagination {
+      margin-top: 15px;
+    }
+  }
+
+  // テーブルの上に表示するエラー表示
+  .tableAlert {
+    margin-bottom: 16px;
+  }
+}
+
+:global {
+  .ant-table-thead {
+    font-size:12px;
+  }
+  .ant-table-tbody {
+    font-size:12px;
+  }
+}
+
+.table {
+  :global {
+    .ant-table-body {
+      overflow-x: auto;
+      overflow-y: auto;
+
+      table, tr, th, td, tbody, thead {
+        width: max-content;
+        min-width: 100%;
+      }
+    }
+  }
+}
+
+//<input type="number">のスピンボタン（右のボタン）を消す
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+// 備考欄の幅を狭める
+body div.narrowLine {
+  line-height: 18px;
+  margin-top: 10px;
+}
+
+// 入力内容が別の箇所と違う場合のアラート
+.notSameWithOther{
+  background-color: lightpink;
+}
+
+// セルごとの隙間を狭くするなどスペース節約型テーブル
+.narrow_table{
+  :global{
+    .ant-table-middle > .ant-table-content > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td
+    {
+      padding: 6px 4px;
+    }
+
+  }
+}
+.narrow_table_x{
+  :global{
+    .ant-table-middle > .ant-table-content > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th,
+    .ant-table-middle > .ant-table-content > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td,
+    .ant-table-middle > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td
+    {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
+  }
+}

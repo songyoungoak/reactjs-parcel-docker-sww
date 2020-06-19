@@ -1,0 +1,64 @@
+
+:global {
+  html, body, #routerRoot, #app {
+    height: 100%;
+
+  }
+
+  html body, body .ant-form, body .ant-menu, body .ant-tag, body .ant-breadcrumb, 
+  body .ant-alert, body .ant-btn, body .ant-input,body .ant-select, body .ant-tabs, 
+  body .ant-table, body .ant-radio-wrapper, body .ant-modal, body .ant-message, body 
+  .ant-form-explain, body .ant-form-item, body .ant-checkbox-wrapper, body .ant-card, body .ant-select-dropdown {
+    font-family: "sans-serif";
+    word-break: break-all;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "sans-serif";
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  body hr {
+    height: .25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #e1e4e8;
+    border: 0;
+  }
+}

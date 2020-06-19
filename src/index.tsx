@@ -1,5 +1,5 @@
 import '../node_modules/normalize.css/normalize.css'
-
+import './styles/app.scss'
 
 
 import * as React from 'react'
