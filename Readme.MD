@@ -21,7 +21,10 @@ Clone and install deps
 ```
 git clone here
 cd reactjs-parcel-docker-sww
-docker-compose up -d --build
+docker-compose build
+docker-compose up -d 
+docker exec -it react-parcel-sww ash
+npm run start
 ```
 
-Then open `http://localhost:1234` and edit `index.js` and press save. Parcel will automagically hot reload you files whenever you make changes.
+Then open `http://localhost:1236` and edit `index.js` and press save. Parcel will automagically hot reload you files whenever you make changes.
