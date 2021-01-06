@@ -33,7 +33,7 @@
   "dependencies": {
     "@types/react-document-title": "^2.0.2",
     "antd": "^3.4.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bignumber.js": "^7.2.1",
     "blueimp-md5": "^2.10.0",
     "browserslist": "^3.2.5",
